@@ -1,0 +1,31 @@
+---
+title: "My Second Quarto Document"
+author: "Melissa Gonzalez- Ortiz"
+format: html
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point() +
+  scale_color_manual(
+    values = c(setosa = "red", versicolor = "green", virginica = "blue")
+  ) +
+  coord_cartesian(xlim = c(2, 4.5), ylim = c(5, 8)) +
+  labs(
+    title = "Measurements for Different Species of Iris",
+    subtitle = "Virginica has the longest sepals",
+    x = "Sepal Width",
+    y = "Sepal Length",
+    color = "Species"
+  )
+```
+
+execute:
+echo: false
+
+#|label: setup
